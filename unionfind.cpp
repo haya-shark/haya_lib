@@ -26,7 +26,6 @@ public:
         {
             stack[sp++] = index;
             index = now;
-
             now = parents[index];
         }
         while (sp > 0)
@@ -37,10 +36,10 @@ public:
     }
     void unite(int a, int b)
     {
-        if (a == b)
-            return;
         int a_parent = find(a);
         int b_parent = find(b);
+        if (a_parent == b_parent)
+            return;
         if (parents[a_parent] < parents[b_parent])
         {
             parents[a_parent] += parents[b_parent];
