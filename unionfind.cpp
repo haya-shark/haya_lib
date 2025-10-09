@@ -41,15 +41,15 @@ public:
             return;
         int a_parent = find(a);
         int b_parent = find(b);
-        if (parents[a] < parents[b])
+        if (parents[a_parent] < parents[b_parent])
         {
-            parents[a] += parents[b];
-            parents[b] = a;
+            parents[a_parent] += parents[b_parent];
+            parents[b_parent] = a_parent;
         }
         else
         {
-            parents[b] += parents[a];
-            parents[a] = b;
+            parents[b_parent] += parents[a_parent];
+            parents[a_parent] = b_parent;
         }
     }
     bool same(int a, int b)
