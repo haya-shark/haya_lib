@@ -1,3 +1,4 @@
+#include <cstring>
 class UnionFind
 {
     int *parents;
@@ -8,10 +9,7 @@ public:
     {
         parents = new int[n];
         stack = new int[n];
-        for (int i = 0; i < n; i++)
-        {
-            parents[i] = -1;
-        }
+        std::memset(parents, 0xff, sizeof(int) * n);
     }
     ~UnionFind()
     {
