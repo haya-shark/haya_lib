@@ -1,6 +1,6 @@
 template<typename T>
 long long bs_bottom(long long left,long long right,T search,T (*f)(long long)){
-    long long result,middle;
+    long long middle;
     if (f(left) > search){
         return -1;
     }
@@ -28,7 +28,7 @@ long long bs_bottom(long long left,long long right,T search,T (*f)(long long)){
 }
 template<typename T>
 long long bs_top(long long left,long long right,T search,T (*f)(long long)){
-    long long result,middle;
+    long long middle;
     if (f(left) > search){
        return -1;
     }
