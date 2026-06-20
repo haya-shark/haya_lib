@@ -3,6 +3,10 @@ struct haya_pair
 {
     T id;
     U value;
+    haya_pair(){
+        id=T();
+        value=U();
+    }
     haya_pair(T id_in, U value_in)
     {
         id = id_in;
@@ -57,41 +61,42 @@ struct haya_pair
         }
         return *this;
     }
-    bool &operator<(const haya_pair &a){
+    bool operator<(const haya_pair &a){
+
         return this->value < a.value;
     }
-    bool &operator<(const U &a){
+    bool operator<(const U &a){
         return this->value < a;
     }
-    bool &operator>(const haya_pair &a){
+    bool operator>(const haya_pair &a){
         return this->value > a.value;
     }
-    bool &operator>(const U &a){
+    bool operator>(const U &a){
         return this->value > a;
     }
     
-    bool &operator<=(const haya_pair &a){
+    bool operator<=(const haya_pair &a){
         return this->value <= a.value;
     }
-    bool &operator<=(const U &a){
+    bool operator<=(const U &a){
         return this->value <=a;
     }
-    bool &operator>=(const haya_pair &a){
+    bool operator>=(const haya_pair &a){
         return this->value >= a.value;
     }
-    bool &operator>=(const U &a){
+    bool operator>=(const U &a){
         return this->value >=a;
     } 
-    bool &operator==(const haya_pair &a){
+    bool operator==(const haya_pair &a){
         return this->value == a.value;
     }
-    bool &operator== (const U &a){
+    bool operator== (const U &a){
         return this-> value == a;
     }
-    bool &operator!= (const haya_pair &a){
+    bool operator!= (const haya_pair &a){
         return this-> value != a.value;
     }
-    bool &operator!=(const U &a){
+    bool operator!=(const U &a){
         return this->value !=a;
     }
     bool full_equal(const haya_pair &a){
